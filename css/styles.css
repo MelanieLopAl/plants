@@ -1,59 +1,95 @@
 body {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  input[type="radio"],
-  input[type="checkbox"] {
-    margin-right: 5px;
-  }
-  
-  #submitButton,
-  #clearButton {
-    margin-top: 10px;
-    padding: 5px 10px;
-  }
-  
-  #recommendation {
-    border: 1px solid #ccc;
-    padding: 20px;
-  }
-  
-  /* Additional Styles for Better Alignment */
-  form label {
-    margin-top: 10px;
-  }
-  
-  #plantForm {
-    width: 100%;
-  }
-  
-  #plantForm input[type="submit"],
-  #plantForm button[type="button"] {
-    width: 100%;
-  }
-  
-  .images-container img {
-    max-width: 150px;
-    margin: 10px;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #747474;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.options {
+  display: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 20px;
+  color: #747474;
+  font-weight: bold;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.7);
+}
+
+.options span {
+  flex: 1;
+  color: #747474;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+#submitButton,
+#clearButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  color: #747474;
+}
+
+#submitButton {
+  background-color: #7a5cfa;
+  color: #fff;
+}
+
+#submitButton:hover {
+  background-color: #674cc9;
+}
+
+#clearButton {
+  background-color: #fff;
+  color: #7a5cfa;
+  border: 2px solid #7a5cfa;
+}
+
+#clearButton:hover {
+  background-color: #7a5cfa;
+  color: #fff;
+}
+
+#recommendation {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+#plantForm {
+  width: 100%;
+  margin-left: 0;
+  display: flex;
+}

@@ -1,4 +1,4 @@
-{
+const plantGuide = {
   "Low Light Plants": {
     "Toxic": "Sansevieria",
     "Non-Toxic": "Boston Fern"
@@ -11,4 +11,6 @@
     "Toxic": "Aloe Vera",
     "Non-Toxic": "Cactus"
   }
-}
+};
+
+export { plantGuide }

@@ -1,5 +1,68 @@
-import PlantBuilder from "./plantConstructor.js";
-import plantGuide from './plantsGuide.js';
+class plantBuilder {
+  constructor() {
+    this.plantName = '';
+    this.soilType = '';
+    this.potMaterial = '';
+    this.potStyle = '';
+    this.potColor = '';
+    this.extras = [];
+  }
+
+  withPlantName(name) {
+    this.plantName = name;
+    return this;
+  }
+
+  withSoilType(type) {
+    this.soilType = type;
+    return this;
+  }
+
+  withPotMaterial(material) {
+    this.potMaterial = material;
+    return this;
+  }
+
+  withPotStyle(style) {
+    this.potStyle = style;
+    return this;
+  }
+
+  withPotColor(color) {
+    this.potColor = color;
+    return this;
+  }
+
+  withExtras(extras) {
+    this.extras = extras;
+    return this;
+  }
+
+  build() {
+    return {
+      name: this.plantName,
+      soil: this.soilType,
+      pot: `${this.potMaterial} pot ${this.potStyle}`,
+      color: this.potColor,
+      extras: this.extras.join(', ')
+    };
+  }
+}
+
+const plantGuide = {
+  "Low Light Plants": {
+    "Toxic": "Sansevieria",
+    "Non-Toxic": "Boston Fern"
+  },
+  "Medium Light Plants": {
+    "Toxic": "Aglaonema",
+    "Non-Toxic": "Monstera"
+  },
+  "Outdoor Plants": {
+    "Toxic": "Aloe Vera",
+    "Non-Toxic": "Cactus"
+  }
+};
 
 function getRecommendation(formData) {
   const { placement, sunlight, pets, watering, style, extras } = formData;
@@ -40,7 +103,7 @@ function getRecommendation(formData) {
     potColor = "Yellow";
   }
 
-  const recommendation = new PlantBuilder()
+  const recommendation = new plantBuilder()
     .withPlantName(plantName)
     .withSoilType(soilType)
     .withPotMaterial(potMaterial)
@@ -103,4 +166,25 @@ function showRecommendation(recommendation) {
   recommendationDiv.appendChild(infoList);
 }
 
-export { getRecommendation, showRecommendation } 
+document.getElementById("plantForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const formData = {
+    placement: document.querySelector('input[name="placement"]:checked').value,
+    sunlight: document.querySelector('input[name="sunlight"]:checked').value,
+    pets: document.querySelector('input[name="pets"]:checked').value,
+    watering: document.querySelector('input[name="watering"]:checked').value,
+    style: document.querySelector('input[name="style"]:checked').value,
+    extras: Array.from(document.querySelectorAll('input[name="extras"]:checked')).map(
+      (input) => input.value
+    ),
+  };
+
+  const recommendation = getRecommendation(formData);
+  showRecommendation(recommendation);
+});
+
+document.getElementById("clearButton").addEventListener("click", function () {
+  document.getElementById("plantForm").reset();
+  document.getElementById("recommendation").innerHTML = "";
+});

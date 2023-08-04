@@ -1,6 +1,6 @@
-import { getRecommendation, showRecommendation } from "./components/recommendation";
+import { getRecommendation, showRecommendation } from "./components/recommendation.js";
 
-document.getElementById("plantForm").addEventListener("submit", function (event) {
+document.getElementById("plantForm").addEventListener("click", function (event) {
   event.preventDefault();
 
   const formData = {

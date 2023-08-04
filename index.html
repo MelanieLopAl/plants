@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Plants</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+  <h1>Let us find the perfect plant for you</h1>
+  <form id="plantForm">
+    <label>
+      Where will you place your plant?
+      <input type="radio" name="placement" value="inside-indirect-light">Inside with some indirect light
+      <input type="radio" name="placement" value="inside-lot-indirect-light">Inside with a lot of indirect light
+      <input type="radio" name="placement" value="outside">Outside
+    </label>
+    <label>
+      Will it receive direct sunlight?
+      <input type="radio" name="sunlight" value="yes">Yes
+      <input type="radio" name="sunlight" value="no">No
+    </label>
+    <label>
+      Do you have pets (cats or dogs)?
+      <input type="radio" name="pets" value="yes">Yes
+      <input type="radio" name="pets" value="no">No
+    </label>
+    <label>
+      Do you tend to overwater or underwater?
+      <input type="radio" name="watering" value="overwater">Overwater
+      <input type="radio" name="watering" value="underwater">Underwater
+      <input type="radio" name="watering" value="neither">Neither / I don’t know
+    </label>
+    <label>
+      How do you define your style?
+      <input type="radio" name="style" value="minimalism">I like minimalism and material colors
+      <input type="radio" name="style" value="simple">I like some decoration and simple colors
+      <input type="radio" name="style" value="decorated">I like a lot of decoration and bright colors
+    </label>
+    <label>
+      Do you want to add any extra elements to your plant?
+      <input type="checkbox" name="extras" value="moss-pole">Moss pole
+      <input type="checkbox" name="extras" value="pebbles">Pebbles
+      <input type="checkbox" name="extras" value="mini-plants">Smaller plants
+    </label>
+    <input type="submit" value="Get your plant!" id="submitButton">
+    <button type="button" id="clearButton">Clear</button>
+  </form>
+
+  <div id="recommendation">
+    <!-- Plant recommendation will be displayed here -->
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

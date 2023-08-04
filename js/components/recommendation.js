@@ -1,8 +1,5 @@
-import plantBuilder from "./plantConstructor";
-import guidePlants from './guidePlants.json'
-
-{plantBuilder}
-guidePlants
+import PlantBuilder from "./plantConstructor";
+import guidePlants from './guidePlants.json';
 
 export function getRecommendation(formData) {
   const { placement, sunlight, pets, watering, style, extras } = formData;
@@ -14,11 +11,11 @@ export function getRecommendation(formData) {
 
   let plantName;
   if (placement === "inside-indirect-light") {
-    plantName = plantGuide["Low Light Plants"][plantType];
+    plantName = guidePlants["Low Light Plants"][plantType];
   } else if (placement === "inside-lot-indirect-light") {
-    plantName = plantGuide["Medium Light Plants"][plantType];
+    plantName = guidePlants["Medium Light Plants"][plantType];
   } else if (placement === "outside") {
-    plantName = plantGuide["Outdoor Plants"][plantType];
+    plantName = guidePlants["Outdoor Plants"][plantType];
   }
 
   let soilType = sunlight === "yes" ? "Composted Soil" : "Fertilized Soil";
@@ -43,7 +40,7 @@ export function getRecommendation(formData) {
     potColor = "Yellow";
   }
 
-  const recommendation = new plantBuilder()
+  const recommendation = new PlantBuilder()
     .withPlantName(plantName)
     .withSoilType(soilType)
     .withPotMaterial(potMaterial)

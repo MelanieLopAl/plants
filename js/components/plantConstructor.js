@@ -1,4 +1,4 @@
-export default class plantBuilder {
+export default class PlantBuilder {
   constructor() {
     this.plantName = '';
     this.soilType = '';

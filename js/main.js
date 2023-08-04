@@ -1,6 +1,10 @@
-import { getRecommendation, showRecommendation } from './components/recommendation';
+import { getRecommendation } from './components/getRecommendation';
+import { showRecommendation } from './components/showRecommendation';
 
-document.getElementById('plantForm').addEventListener('submit', function (event) {
+{getRecommendation}
+{showRecommendation}
+
+function handleFormSubmit(event) {
   event.preventDefault();
 
   const formData = {
@@ -16,7 +20,9 @@ document.getElementById('plantForm').addEventListener('submit', function (event)
 
   const recommendation = getRecommendation(formData);
   showRecommendation(recommendation);
-});
+}
+
+document.getElementById('plantForm').addEventListener('click', handleFormSubmit);
 
 document.getElementById('clearButton').addEventListener('click', function () {
   document.getElementById('plantForm').reset();

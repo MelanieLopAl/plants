@@ -1,6 +1,6 @@
-import { getRecommendation, showRecommendation } from "./components/recommendation";
+import { getRecommendation, showRecommendation } from './components/recommendation';
 
-document.getElementById("plantForm").addEventListener("submit", function (event) {
+document.getElementById('plantForm').addEventListener('submit', function (event) {
   event.preventDefault();
 
   const formData = {
@@ -18,7 +18,7 @@ document.getElementById("plantForm").addEventListener("submit", function (event)
   showRecommendation(recommendation);
 });
 
-document.getElementById("clearButton").addEventListener("click", function () {
-  document.getElementById("plantForm").reset();
-  document.getElementById("recommendation").innerHTML = "";
+document.getElementById('clearButton').addEventListener('click', function () {
+  document.getElementById('plantForm').reset();
+  document.getElementById('recommendation').innerHTML = '';
 });

@@ -1,4 +1,4 @@
-export default class plantBuilder {
+class plantBuilder {
   constructor() {
     this.plantName = '';
     this.soilType = '';
@@ -48,3 +48,5 @@ export default class plantBuilder {
     };
   }
 }
+
+export {plantBuilder}

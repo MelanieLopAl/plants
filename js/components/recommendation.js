@@ -1,46 +1,45 @@
-import plantBuilder from "./plantConstructor";
+import plantBuilder from './plantConstructor';
 import guidePlants from './guidePlants.json'
 
-{plantBuilder}
 guidePlants
 
-export function getRecommendation(formData) {
+function getRecommendation(formData) {
   const { placement, sunlight, pets, watering, style, extras } = formData;
 
-  let plantType = "Non-Toxic";
-  if (pets === "yes") {
-    plantType = "Toxic";
+  let plantType = 'Non-Toxic';
+  if (pets === 'yes') {
+    plantType = 'Toxic';
   }
 
   let plantName;
-  if (placement === "inside-indirect-light") {
-    plantName = plantGuide["Low Light Plants"][plantType];
-  } else if (placement === "inside-lot-indirect-light") {
-    plantName = plantGuide["Medium Light Plants"][plantType];
-  } else if (placement === "outside") {
-    plantName = plantGuide["Outdoor Plants"][plantType];
+  if (placement === 'inside-indirect-light') {
+    plantName = plantGuide['Low Light Plants'][plantType];
+  } else if (placement === 'inside-lot-indirect-light') {
+    plantName = plantGuide['Medium Light Plants'][plantType];
+  } else if (placement === 'outside') {
+    plantName = plantGuide['Outdoor Plants'][plantType];
   }
 
-  let soilType = sunlight === "yes" ? "Composted Soil" : "Fertilized Soil";
+  let soilType = sunlight === 'yes' ? 'Composted Soil' : 'Fertilized Soil';
 
   let potMaterial, potStyle, potColor;
-  if (watering === "overwater") {
-    potMaterial = "Clay";
-    potStyle = "Substitute the soil for the easy drainage";
+  if (watering === 'overwater') {
+    potMaterial = 'Clay';
+    potStyle = 'Substitute the soil for the easy drainage';
   } else {
-    potMaterial = "Ceramic";
-    potStyle = "";
+    potMaterial = 'Ceramic';
+    potStyle = '';
   }
 
-  if (style === "minimalism") {
-    potStyle += " Simple";
-    potColor = "Clay";
-  } else if (style === "simple") {
-    potStyle += " Decorated";
-    potColor = "Blue";
-  } else if (style === "decorated") {
-    potStyle += " Decorated";
-    potColor = "Yellow";
+  if (style === 'minimalism') {
+    potStyle += ' Simple';
+    potColor = 'Clay';
+  } else if (style === 'simple') {
+    potStyle += ' Decorated';
+    potColor = 'Blue';
+  } else if (style === 'decorated') {
+    potStyle += ' Decorated';
+    potColor = 'Yellow';
   }
 
   const recommendation = new plantBuilder()
@@ -55,8 +54,8 @@ export function getRecommendation(formData) {
   return recommendation;
 }
 
-export function showRecommendation(recommendation) {
-  const recommendationDiv = document.getElementById("recommendation");
+function showRecommendation(recommendation) {
+  const recommendationDiv = document.getElementById('recommendation');
   recommendationDiv.innerHTML = '';
 
   const title = document.createElement('h2');
@@ -105,3 +104,5 @@ export function showRecommendation(recommendation) {
   `;
   recommendationDiv.appendChild(infoList);
 }
+
+export {getRecommendation, showRecommendation}

@@ -38,13 +38,4 @@ export default class PlantBuilder {
     return this;
   }
 
-  build() {
-    return {
-      name: this.plantName,
-      soil: this.soilType,
-      pot: `${this.potMaterial} pot ${this.potStyle}`,
-      color: this.potColor,
-      extras: this.extras.join(', ')
-    };
-  }
 }

@@ -1,7 +1,7 @@
-import { getRecommendation, showRecommendation } from "./components/recommendation.js";
+import { getRecommendation, showRecommendation } from './components/recommendation.js'
 
-document.getElementById("plantForm").addEventListener("click", function (event) {
-  event.preventDefault();
+document.getElementById('submitButton').addEventListener('click', function (event) {
+  event.preventDefault()
 
   const formData = {
     placement: document.querySelector('input[name="placement"]:checked').value,
@@ -11,14 +11,14 @@ document.getElementById("plantForm").addEventListener("click", function (event) 
     style: document.querySelector('input[name="style"]:checked').value,
     extras: Array.from(document.querySelectorAll('input[name="extras"]:checked')).map(
       (input) => input.value
-    ),
-  };
+    )
+  }
 
-  const recommendation = getRecommendation(formData);
-  showRecommendation(recommendation);
-});
+  const recommendation = getRecommendation(formData)
+  showRecommendation(recommendation)
+})
 
-document.getElementById("clearButton").addEventListener("click", function () {
-  document.getElementById("plantForm").reset();
-  document.getElementById("recommendation").innerHTML = "";
-});
+document.getElementById('clearButton').addEventListener('click', function () {
+  document.getElementById('plantForm').reset()
+  document.getElementById('recommendation').innerHTML = ''
+})

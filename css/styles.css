@@ -93,3 +93,15 @@ input[type="checkbox"] {
   margin-left: 0;
   display: flex;
 }
+
+.images-container{
+  position: relative;
+  width: 30rem;
+  height: 30rem;
+}
+
+.images-container img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

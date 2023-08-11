@@ -1,52 +1,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Your plant</title>
+  <title>Plants</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
   <h1>Let us find the perfect plant for you</h1>
   <form id="plantForm">
-    <label>
-      Where will you place your plant?
-      <input type="radio" name="placement" value="inside-indirect-light">Inside with some indirect light
-      <input type="radio" name="placement" value="inside-lot-indirect-light">Inside with a lot of indirect light
-      <input type="radio" name="placement" value="outside">Outside
-    </label>
-    <label>
-      Will it receive direct sunlight?
-      <input type="radio" name="sunlight" value="yes">Yes
-      <input type="radio" name="sunlight" value="no">No
-    </label>
-    <label>
-      Do you have pets (cats or dogs)?
-      <input type="radio" name="pets" value="yes">Yes
-      <input type="radio" name="pets" value="no">No
-    </label>
-    <label>
-      Do you tend to overwater or underwater?
-      <input type="radio" name="watering" value="overwater">Overwater
-      <input type="radio" name="watering" value="underwater">Underwater
-      <input type="radio" name="watering" value="neither">Neither / I don’t know
-    </label>
-    <label>
-      How do you define your style?
-      <input type="radio" name="style" value="minimalism">I like minimalism and material colors
-      <input type="radio" name="style" value="simple">I like some decoration and simple colors
-      <input type="radio" name="style" value="decorated">I like a lot of decoration and bright colors
-    </label>
-    <label>
-      Do you want to add any extra elements to your plant?
-      <input type="checkbox" name="extras" value="moss-pole">Moss pole
-      <input type="checkbox" name="extras" value="pebbles">Pebbles
-      <input type="checkbox" name="extras" value="mini-plants">Smaller plants
-    </label>
-    <input type="submit" value="Get your plant!" id="submitButton">
-    <button type="reset" id="clearButton">Clear</button>
+    <div class="question">
+      <label>Where will you place your plant?</label>
+      <div class="options">
+        <input type="radio" name="placement" value="inside-indirect-light" required>
+        <span>Inside with some indirect light</span>
+      </div>
+      <div class="options">
+        <input type="radio" name="placement" value="inside-lot-indirect-light" required>
+        <span>Inside with a lot of indirect light</span>
+      </div>
+      <div class="options">
+        <input type="radio" name="placement" value="outside" required>
+        <span>Outside</span>
+      </div>
+    </div>
+    <div class="question">
+      <label>Will it receive direct sunlight?</label>
+      <div class="options">
+        <input type="radio" name="sunlight" value="yes" required>
+        <span>Yes</span>
+      </div>
+      <div class="options">
+        <input type="radio" name="sunlight" value="no" required>
+        <span>No</span>
+      </div>
+    </div>
+    <div class="question">
+      <label>Do you have pets (cats or dogs)?</label>
+      <div class="options">
+        <input type="radio" name="pets" value="yes" required>
+        <span>Yes</span>
+      </div>
+      <div class="options">
+        <input type="radio" name="pets" value="no" required>
+        <span>No</span>
+      </div>
+    </div>
+    <div class="question">
+      <label>Do you tend to overwater or underwater?</label>
+      <div class="options">
+        <input type="radio" name="watering" value="overwater" required>
+        <span>Overwater</span>
+      </div>
+      <div class="options">
+        <input type="radio" name="watering" value="underwater" required>
+        <span>Underwater</span>
+      </div>
+      <div class="options">
+        <input type="radio" name="watering" value="neither" required>
+        <span>Neither / I don’t know</span>
+      </div>
+    </div>
+    <div class="question">
+      <label>How do you define your style?</label>
+      <div class="options">
+        <input type="radio" name="style" value="minimalism" required>
+        <span>I like minimalism and material colors</span>
+      </div>
+      <div class="options">
+        <input type="radio" name="style" value="simple" required>
+        <span>I like some decoration and simple colors</span>
+      </div>
+      <div class="options">
+        <input type="radio" name="style" value="decorated" required>
+        <span>I like a lot of decoration and bright colors</span>
+      </div>
+    </div>
+    <div class="question">
+      <label>Do you want to add any extra elements to your plant?</label>
+      <div class="options">
+        <input type="checkbox" name="extras" value="moss-pole">
+        <span>Moss pole</span>
+      </div>
+      <div class="options">
+        <input type="checkbox" name="extras" value="pebbles">
+        <span>Pebbles</span>
+      </div>
+      <div class="options">
+        <input type="checkbox" name="extras" value="mini-plants">
+        <span>Smaller plants</span>
+      </div>
+    </div>
+
+ 
+    <div class="button-container">
+      <input type="button" value="Get your plant!" id="submitButton">
+      <button type="reset" id="clearButton">Clear</button>
+    </div>
   </form>
 
   <div id="recommendation">
-    <!-- Plant recommendation will be displayed here -->
+
   </div>
 
   <script type="module" src="js/main.js"></script>

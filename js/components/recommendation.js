@@ -56,7 +56,7 @@ function showRecommendation (recommendation) {
   recommendationDiv.innerHTML = ''
 
   const title = document.createElement('h2')
-  title.textContent = recommendation.name
+  title.textContent = recommendation.plantName
   recommendationDiv.appendChild(title)
 
   const imagesContainer = document.createElement('div')

@@ -1,6 +1,6 @@
 import { getRecommendation, showRecommendation } from './components/recommendation.js'
 
-document.getElementById('submitButton').addEventListener('click', function (event) {
+document.getElementById('plantForm').addEventListener('submit', function (event) {
   event.preventDefault()
 
   const formData = {

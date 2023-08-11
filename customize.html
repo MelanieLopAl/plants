@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customize Your Plant</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+  <h1>Customize Your Plant</h1>
+  <form id="customizeForm">
+    <label>
+      Choose your pot:
+      <input type="radio" name="pot" value="clay">Clay
+      <input type="radio" name="pot" value="ceramic">Ceramic
+    </label>
+    <label>
+      Pot decorations:
+      <input type="radio" name="potDecorations" value="yes">Yes
+      <input type="radio" name="potDecorations" value="no">No
+    </label>
+    <label>
+      Pot color:
+      <input type="checkbox" name="potColorToggle" value="yes">Yes
+      <select name="potColor" id="potColorSelect" disabled>
+        <option value="blue">Blue</option>
+        <option value="pink">Pink</option>
+        <option value="green">Green</option>
+        <option value="purple">Purple</option>
+      </select>
+    </label>
+    <label>
+      Choose your plant:
+      <select name="plant">
+        <option value="aglaonema">Aglaonema Silver Bay</option>
+        <option value="aloe">Aloe Vera</option>
+        <option value="boston">Boston Fern</option>
+        <option value="cactus">Cactus</option>
+        <option value="monstera">Monstera Deliciosa</option>
+        <option value="peace-lily">Peace Lily</option>
+        <option value="sansevieria">Sansevieria</option>
+      </select>
+    </label>
+    <label>
+      Choose your soil:
+      <input type="radio" name="soil" value="basic">Basic composted soil
+      <input type="radio" name="soil" value="premium">Premium fertilized soil
+      <input type="radio" name="soil" value="easy-drainage">Easy drainage soil
+    </label>
+    <label>
+      Choose your extras:
+      <input type="checkbox" name="extras" value="moss-pole">Moss pole
+      <input type="checkbox" name="extras" value="pebbles">Pebbles
+      <input type="checkbox" name="extras" value="smaller-plants">Smaller plants
+    </label>
+    <input type="submit" value="Preview" id="previewButton">
+  </form>
+
+  <div id="preview">
+    <!-- Plant preview will be displayed here -->
+  </div>
+
+  <script type="module" src="js/customize.js"></script>
+</body>
+</html>

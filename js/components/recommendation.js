@@ -67,7 +67,6 @@ function showRecommendation(recommendation) {
   plantImage.src = `/assets/plant-${recommendation.plantName.toLowerCase()}.png`;
   imagesContainer.appendChild(plantImage);
 
-  // Add pot image based on potMaterial
   const potImage = document.createElement('img');
   potImage.src = `/assets/pot-${recommendation.potMaterial.toLowerCase()}.png`;
   imagesContainer.appendChild(potImage);
@@ -102,7 +101,7 @@ function showRecommendation(recommendation) {
   `;
   recommendationDiv.appendChild(infoList);
 
-  
+
   const customizeButton = document.createElement('button');
   customizeButton.textContent = 'Customize';
   customizeButton.addEventListener('click', function () {

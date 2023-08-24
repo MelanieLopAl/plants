@@ -102,16 +102,15 @@ function showRecommendation(recommendation) {
   `;
   recommendationDiv.appendChild(infoList);
 
+  
   const customizeButton = document.createElement('button');
   customizeButton.textContent = 'Customize';
   customizeButton.addEventListener('click', function () {
 
-    localStorage.setItem('customPlantName', recommendation.plantName);
-    localStorage.setItem('customPotMaterial', recommendation.potMaterial);
-    localStorage.setItem('customSoilType', recommendation.soilType);
-    localStorage.setItem('customExtras', recommendation.extras.join(','));
-
-    // Redireccionar a la página "customize.html"
+    localStorage.setItem( recommendation.plantName);
+    localStorage.setItem( recommendation.potMaterial);
+    localStorage.setItem(recommendation.soilType);
+    localStorage.setItem(recommendation.extras.join(','));
     window.location.href = 'customize.html';
   });
   recommendationDiv.appendChild(customizeButton); href = 'customize.html';

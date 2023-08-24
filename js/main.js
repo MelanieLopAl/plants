@@ -23,9 +23,7 @@ document.getElementById('submitButton').addEventListener('click', function (even
 
     const recommendation = getRecommendation(formData);
     showRecommendation(recommendation);
-  } else {
-    console.error("Por favor, completa todas las selecciones requeridas.");
-  }
+  } 
 });
 
 document.getElementById('clearButton').addEventListener('click', function () {

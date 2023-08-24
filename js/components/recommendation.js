@@ -1,7 +1,7 @@
 import PlantBuilder from './plantConstructor.js'
 import plantGuide from './plantsGuide.js'
 
-function getRecommendation (formData) {
+function getRecommendation(formData) {
   const { placement, sunlight, pets, watering, style, extras } = formData
 
   let plantType = 'Non-Toxic'
@@ -9,7 +9,7 @@ function getRecommendation (formData) {
     plantType = 'Toxic'
   }
 
-  let plantName
+  let plantName;
   if (placement === 'inside-indirect-light') {
     plantName = plantGuide['Low Light Plants'][plantType]
   } else if (placement === 'inside-lot-indirect-light') {
@@ -51,50 +51,70 @@ function getRecommendation (formData) {
   return recommendation
 }
 
-function showRecommendation (recommendation) {
-  const recommendationDiv = document.getElementById('recommendation')
-  recommendationDiv.innerHTML = ''
+function showRecommendation(recommendation) {
+  const recommendationDiv = document.getElementById('recommendation');
+  recommendationDiv.innerHTML = '';
 
-  const title = document.createElement('h2')
-  title.textContent = recommendation.plantName
-  recommendationDiv.appendChild(title)
+  const title = document.createElement('h2');
+  title.textContent = `Your perfect plant is ${recommendation.plantName}`;
+  recommendationDiv.appendChild(title);
 
-  const imagesContainer = document.createElement('div')
-  imagesContainer.classList.add('images-container')
+  const imagesContainer = document.createElement('div');
+  imagesContainer.classList.add('images-container');
 
   // Images
-  const plantImage = document.createElement('img')
-  plantImage.src = `assets/plant-${recommendation.plantName.toLowerCase().replace(/\s/g, '-')}.png`
-  imagesContainer.appendChild(plantImage)
+  const plantImage = document.createElement('img');
+  plantImage.src = `/assets/plant-${recommendation.plantName.toLowerCase()}.png`;
+  imagesContainer.appendChild(plantImage);
 
-  if (recommendation.extras.includes('moss-pole')) {
-    const mossPoleImage = document.createElement('img')
-    mossPoleImage.src = 'assets/moss-pole.png'
-    imagesContainer.appendChild(mossPoleImage)
-  }
+  // Add pot image based on potMaterial
+  const potImage = document.createElement('img');
+  potImage.src = `/assets/pot-${recommendation.potMaterial.toLowerCase()}.png`;
+  imagesContainer.appendChild(potImage);
 
   if (recommendation.extras.includes('pebbles')) {
-    const pebblesImage = document.createElement('img')
-    pebblesImage.src = 'assets/pebbles.png'
-    imagesContainer.appendChild(pebblesImage)
+    const pebblesImage = document.createElement('img');
+    pebblesImage.src = '/assets/pebbles.png';
+    imagesContainer.appendChild(pebblesImage);
+  }
+
+  if (recommendation.extras.includes('moss-pole')) {
+    const mossPoleImage = document.createElement('img');
+    mossPoleImage.src = '/assets/moss-pole.png';
+    imagesContainer.appendChild(mossPoleImage);
   }
 
   if (recommendation.extras.includes('mini-plants')) {
-    const miniPlantsImage = document.createElement('img')
-    miniPlantsImage.src = 'assets/mini-plants.png'
-    imagesContainer.appendChild(miniPlantsImage)
+    const miniPlantsImage = document.createElement('img');
+    miniPlantsImage.src = '/assets/mini-plants.png';
+    imagesContainer.appendChild(miniPlantsImage);
   }
 
-  recommendationDiv.appendChild(imagesContainer)
+  recommendationDiv.appendChild(imagesContainer);
 
   // Information
-  const infoList = document.createElement('ul')
+  const infoList = document.createElement('ul');
   infoList.innerHTML = `
     <li>Name: ${recommendation.plantName}</li>
+    <li>Pot: ${recommendation.potMaterial}</li>
     <li>Soil: ${recommendation.soilType}</li>
-    <li>Extras: ${recommendation.extras}</li>
-  `
-  recommendationDiv.appendChild(infoList)
-}
+    <li>Extras: ${recommendation.extras.join(', ')}</li>
+  `;
+  recommendationDiv.appendChild(infoList);
+
+  const customizeButton = document.createElement('button');
+  customizeButton.textContent = 'Customize';
+  customizeButton.addEventListener('click', function () {
+
+    localStorage.setItem('customPlantName', recommendation.plantName);
+    localStorage.setItem('customPotMaterial', recommendation.potMaterial);
+    localStorage.setItem('customSoilType', recommendation.soilType);
+    localStorage.setItem('customExtras', recommendation.extras.join(','));
+
+    // Redireccionar a la página "customize.html"
+    window.location.href = 'customize.html';
+  });
+  recommendationDiv.appendChild(customizeButton); href = 'customize.html';
+};
 
 export { getRecommendation, showRecommendation }

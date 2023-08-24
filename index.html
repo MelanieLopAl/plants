@@ -8,91 +8,118 @@
   <h1>Let us find the perfect plant for you</h1>
   <form id="plantForm">
     <div class="question">
-      <label>Where will you place your plant?</label>
-      <div class="options">
-        <input type="radio" name="placement" value="inside-indirect-light" required>
-        <span>Inside with some indirect light</span>
-      </div>
-      <div class="options">
-        <input type="radio" name="placement" value="inside-lot-indirect-light" required>
-        <span>Inside with a lot of indirect light</span>
-      </div>
-      <div class="options">
-        <input type="radio" name="placement" value="outside" required>
-        <span>Outside</span>
-      </div>
+      <label>
+        Where will you place your plant?
+        <div class="options">
+          <input type="radio" name="placement" value="inside-indirect-light" required>
+          Inside with some indirect light
+        </div>
+      </label>
+      <label>
+        <div class="options">
+          <input type="radio" name="placement" value="inside-lot-indirect-light" required>
+          Inside with a lot of indirect light
+        </div>
+      </label>
+      <label>
+        <div class="options">
+          <input type="radio" name="placement" value="outside" required>
+          Outside
+        </div>
+      </label>
+    </div>
+    <div class="question"> 
+      <label>
+        Will it receive direct sunlight?
+        <div class="options">
+          <input type="radio" name="sunlight" value="yes" required>
+          Yes
+        </div>
+      </label>
+      <label>
+        <div class="options">
+          <input type="radio" name="sunlight" value="no" required>
+          No
+        </div>
+      </label>
     </div>
     <div class="question">
-      <label>Will it receive direct sunlight?</label>
-      <div class="options">
-        <input type="radio" name="sunlight" value="yes" required>
-        <span>Yes</span>
-      </div>
-      <div class="options">
-        <input type="radio" name="sunlight" value="no" required>
-        <span>No</span>
-      </div>
+      <label>
+        Do you have pets (cats or dogs)?
+        <div class="options">
+          <input type="radio" name="pets" value="yes" required>
+          Yes
+        </div>
+      </label>
+      <label>
+        <div class="options">
+          <input type="radio" name="pets" value="no" required>
+          No
+        </div>
+      </label>
     </div>
     <div class="question">
-      <label>Do you have pets (cats or dogs)?</label>
-      <div class="options">
-        <input type="radio" name="pets" value="yes" required>
-        <span>Yes</span>
-      </div>
-      <div class="options">
-        <input type="radio" name="pets" value="no" required>
-        <span>No</span>
-      </div>
+      <label>
+        Do you tend to overwater or underwater?
+        <div class="options">
+          <input type="radio" name="watering" value="overwater" required>
+          Overwater
+        </div>
+      </label>
+      <label>
+        <div class="options">
+          <input type="radio" name="watering" value="underwater" required>
+          Underwater
+        </div>
+      </label>
+      <label>
+        <div class="options">
+          <input type="radio" name="watering" value="neither" required>
+          Neither / I don’t know
+        </div>
+      </label>
     </div>
     <div class="question">
-      <label>Do you tend to overwater or underwater?</label>
-      <div class="options">
-        <input type="radio" name="watering" value="overwater" required>
-        <span>Overwater</span>
-      </div>
-      <div class="options">
-        <input type="radio" name="watering" value="underwater" required>
-        <span>Underwater</span>
-      </div>
-      <div class="options">
-        <input type="radio" name="watering" value="neither" required>
-        <span>Neither / I don’t know</span>
-      </div>
+      <label>
+        How do you define your style?
+        <div class="options">
+          <input type="radio" name="style" value="minimalism" required>
+          I like minimalism and material colors
+        </div>
+      </label>
+      <label>
+        <div class="options">
+          <input type="radio" name="style" value="simple" required>
+          I like some decoration and simple colors
+        </div>
+      </label>
+      <label>
+        <div class="options">
+          <input type="radio" name="style" value="decorated" required>
+          I like a lot of decoration and bright colors
+        </div>
+      </label>
     </div>
     <div class="question">
-      <label>How do you define your style?</label>
-      <div class="options">
-        <input type="radio" name="style" value="minimalism" required>
-        <span>I like minimalism and material colors</span>
-      </div>
-      <div class="options">
-        <input type="radio" name="style" value="simple" required>
-        <span>I like some decoration and simple colors</span>
-      </div>
-      <div class="options">
-        <input type="radio" name="style" value="decorated" required>
-        <span>I like a lot of decoration and bright colors</span>
-      </div>
+      <label>
+        Do you want to add any extra elements to your plant?
+        <div class="options">
+          <input type="checkbox" name="extras" value="moss-pole">
+          Moss pole
+        </div>
+        <div class="options">
+          <input type="checkbox" name="extras" value="pebbles">
+          Pebbles
+        </div>
+        <div class="options">
+          <input type="checkbox" name="extras" value="mini-plants">
+          Smaller plants
+        </div>
+      </label>
     </div>
-    <div class="question">
-      <label>Do you want to add any extra elements to your plant?</label>
-      <div class="options">
-        <input type="checkbox" name="extras" value="moss-pole">
-        <span>Moss pole</span>
-      </div>
-      <div class="options">
-        <input type="checkbox" name="extras" value="pebbles">
-        <span>Pebbles</span>
-      </div>
-      <div class="options">
-        <input type="checkbox" name="extras" value="mini-plants">
-        <span>Smaller plants</span>
-      </div>
-    </div>
-
  
     <div class="button-container">
-      <input type="button" value="Get your plant!" id="submitButton">
+      <button type="button" id="submitButton">Get your plant!</button>
       <button type="reset" id="clearButton">Clear</button>
     </div>
   </form>

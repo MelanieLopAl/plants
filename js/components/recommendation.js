@@ -53,48 +53,57 @@ function getRecommendation (formData) {
 
 function showRecommendation (recommendation) {
   const recommendationDiv = document.getElementById('recommendation')
-  recommendationDiv.innerHTML = ''
+  recommendationDiv.innerHTML = '';
 
-  const title = document.createElement('h2')
-  title.textContent = recommendation.plantName
-  recommendationDiv.appendChild(title)
+  const title = document.createElement('h2');
+  title.textContent = `Your perfect plant is ${recommendation.plantName}`;
+  recommendationDiv.appendChild(title);
 
-  const imagesContainer = document.createElement('div')
-  imagesContainer.classList.add('images-container')
+  const imagesContainer = document.createElement('div');
+  imagesContainer.classList.add('images-container');
 
   // Images
-  const plantImage = document.createElement('img')
-  plantImage.src = `assets/plant-${recommendation.plantName.toLowerCase().replace(/\s/g, '-')}.png`
-  imagesContainer.appendChild(plantImage)
+  const plantImage = document.createElement('img');
+  plantImage.src = `/assets/plant-${recommendation.plantName.toLowerCase()}.png`
+  imagesContainer.appendChild(plantImage);
 
   if (recommendation.extras.includes('moss-pole')) {
-    const mossPoleImage = document.createElement('img')
-    mossPoleImage.src = 'assets/moss-pole.png'
-    imagesContainer.appendChild(mossPoleImage)
+    const mossPoleImage = document.createElement('img');
+    mossPoleImage.src = '/assets/moss-pole.png';
+    imagesContainer.appendChild(mossPoleImage);
   }
 
   if (recommendation.extras.includes('pebbles')) {
-    const pebblesImage = document.createElement('img')
-    pebblesImage.src = 'assets/pebbles.png'
-    imagesContainer.appendChild(pebblesImage)
+    const pebblesImage = document.createElement('img');
+    pebblesImage.src = '/assets/pebbles.png'
+    imagesContainer.appendChild(pebblesImage);
   }
 
   if (recommendation.extras.includes('mini-plants')) {
-    const miniPlantsImage = document.createElement('img')
-    miniPlantsImage.src = 'assets/mini-plants.png'
-    imagesContainer.appendChild(miniPlantsImage)
+    const miniPlantsImage = document.createElement('img');
+    miniPlantsImage.src = '/assets/mini-plants.png'
+    imagesContainer.appendChild(miniPlantsImage);
   }
 
-  recommendationDiv.appendChild(imagesContainer)
+  recommendationDiv.appendChild(imagesContainer);
 
   // Information
-  const infoList = document.createElement('ul')
+  const infoList = document.createElement('ul');
   infoList.innerHTML = `
     <li>Name: ${recommendation.plantName}</li>
+    <li> Pot: ${recommendation.potMaterial}</li>    
     <li>Soil: ${recommendation.soilType}</li>
     <li>Extras: ${recommendation.extras}</li>
   `
   recommendationDiv.appendChild(infoList)
+
+  const customizeButton = document.createElement('button');
+  customizeButton.textContent = 'Customize';
+  customizeButton.addEventListener('click', function () {
+    // Redireccionar a la página "customize.html"
+    window.location.href = 'customize.html';
+  });
+  recommendationDiv.appendChild(customizeButton);
 }
 
 export { getRecommendation, showRecommendation }
